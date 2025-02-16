@@ -6,13 +6,7 @@ const cors = require('cors');
 const MoodSong = require('./models/MoodSong');
 
 const app = express();
-app.use(
-	cors({
-		origin: '*',
-		methods: ['GET', 'POST'],
-		allowedHeaders: ['Content-Type'],
-	}),
-);
+app.use(cors());
 app.use(express.json());
 
 const MONGO_URI = process.env.MONGO_URI;
