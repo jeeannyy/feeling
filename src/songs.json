@@ -1,0 +1,174 @@
+[
+	{
+		"_id": "happy",
+		"emotion": "Happy",
+		"songs": [
+			{
+				"title": "Magnetic (City Night Remix)",
+				"artist": "ILLIT",
+				"album": "Magnetic (Remixes)",
+				"release": "2024",
+				"url": "https://www.youtube.com/watch?v=x1YcuXLeaoc"
+			},
+			{
+				"title": "WORK",
+				"artist": "ATEEZ",
+				"album": "GOLDEN HOUR : Part.1",
+				"release": "2024",
+				"url": "https://www.youtube.com/watch?v=D4DiJat9wzg"
+			},
+			{
+				"title": "Like That",
+				"artist": "Doja Cat",
+				"album": "Hot Pink",
+				"release": "2019",
+				"url": "https://www.youtube.com/watch?v=gap-zS1VBKo"
+			}
+		]
+	},
+
+	{
+		"_id": "surprised",
+		"emotion": "Surprised",
+		"songs": [
+			{
+				"title": "Text Me",
+				"artist": "DPR LIVE",
+				"album": "Her",
+				"release": "2017",
+				"url": "https://www.youtube.com/watch?v=4K00cvWWlzw"
+			},
+			{
+				"title": "Pressure",
+				"artist": "RINI",
+				"album": "Ultraviolet",
+				"release": "2022",
+				"url": "https://www.youtube.com/watch?v=l2RbJDbU69A"
+			},
+			{
+				"title": "Over 85",
+				"artist": "Hojean",
+				"album": "Over 85",
+				"release": "2020",
+				"url": "https://www.youtube.com/watch?v=vH62-sZ6_so"
+			},
+			{
+				"title": "Thim Slick (feat. Jeremih)",
+				"artist": "Fabolous",
+				"album": "Soul Tape 3",
+				"release": "2013",
+				"url": "https://www.youtube.com/watch?v=WyJMNU_U_fo"
+			}
+		]
+	},
+
+	{
+		"_id": "sad",
+		"emotion": "Sad",
+		"songs": [
+			{
+				"title": "do me right",
+				"artist": "brb.",
+				"album": "relationshit",
+				"release": "2020",
+				"url": "https://www.youtube.com/watch?v=U7Wod1UVrZ0"
+			},
+			{
+				"title": "What Do I Do",
+				"artist": "SZA",
+				"album": "SOS Deluxe: LANA",
+				"release": "2024",
+				"url": "https://www.youtube.com/watch?v=p8pYDvb3BzA"
+			},
+			{
+				"title": "close with desires (right person wrong timing)",
+				"artist": "teo glacier",
+				"album": "close with desires",
+				"release": "2023",
+				"url": "https://www.youtube.com/watch?v=M2uXX5_T2QA"
+			},
+			{
+				"title": "Supernatural",
+				"artist": "NewJeans",
+				"album": "Supernatural",
+				"release": "2024",
+				"url": "https://www.youtube.com/watch?v=cT9wIINtBwA"
+			}
+		]
+	},
+
+	{
+		"_id": "angry",
+		"emotion": "Angry",
+		"songs": [
+			{
+				"title": "m.A.A.d city (feat. MC Eiht)",
+				"artist": "Kendrick Lamar",
+				"album": "good kid, m.A.A.d. city",
+				"release": "2012",
+				"url": "https://www.youtube.com/watch?v=mprkqDNUQb0"
+			},
+			{
+				"title": "Jus' Know",
+				"artist": "BlackMayo",
+				"album": "Jus' Know",
+				"release": "2018",
+				"url": "https://www.youtube.com/watch?v=gFQw40RHjEU"
+			},
+			{
+				"title": "Switch Lanes (feat. The Game)",
+				"artist": "Tyga",
+				"album": "Well Done 3 & 4",
+				"release": "2012",
+				"url": "https://www.youtube.com/watch?v=d77KzjdZles"
+			}
+		]
+	},
+	{
+		"_id": "fearful",
+		"emotion": "Fearful",
+		"songs": [
+			{
+				"title": "Not Worth It",
+				"artist": "Emotional Oranges",
+				"album": "The Juice: Vol. II",
+				"release": "2019",
+				"url": "https://www.youtube.com/watch?v=OgvxGQSFsFA"
+			},
+			{
+				"title": "Time to Pretend",
+				"artist": "MGMT",
+				"album": "Oracular Spectacular",
+				"release": "2007",
+				"url": "https://www.youtube.com/watch?v=fh8-5goroco"
+			}
+		]
+	},
+	{
+		"_id": "disgusted",
+		"emotion": "Disgusted",
+		"songs": [
+			{
+				"title": "How Sweet",
+				"artist": "NewJeans",
+				"album": "How Sweet",
+				"release": "2024",
+				"url": "https://www.youtube.com/watch?v=iR2Uq2LINyU"
+			},
+			{
+				"title": "Cool With You",
+				"artist": "NewJeans",
+				"album": "Get Up",
+				"release": "2023",
+				"url": "https://www.youtube.com/watch?v=gp-P_sxLBaw"
+			},
+			{
+				"title": "Love Quotes",
+				"artist": "Jenevieve",
+				"album": "Love Quotes",
+				"release": "2022",
+				"url": "https://www.youtube.com/watch?v=LkMMUoGAeQQ"
+			}
+		]
+	}
+]
