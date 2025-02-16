@@ -75,7 +75,6 @@ const App = () => {
 					<div
 						key={emotion.name}
 						className='bubble'
-						style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
 						draggable
 						onDragStart={(e) =>
 							e.dataTransfer.setData('text/plain', emotion.name)

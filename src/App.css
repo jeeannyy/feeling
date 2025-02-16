@@ -32,6 +32,7 @@ body {
 	height: 60px;
 	border-radius: 5px;
 	color: rgba(255, 255, 255, 0.8);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -39,6 +40,8 @@ body {
 	cursor: grab;
 	transition: transform 0.2s, box-shadow 0.2s;
 	box-shadow: 5px 5px 0px white, 10px 10px 0px rgba(35, 35, 35, 0.5);
+
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .bubble:active {
