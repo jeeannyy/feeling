@@ -49,3 +49,7 @@ coverage/
 .parcel-cache/
 .babelrc
 .babelcache
+
+
+node_modules/
+.env
