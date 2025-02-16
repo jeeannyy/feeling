@@ -39,7 +39,7 @@ body {
 	font-size: 20px;
 	cursor: grab;
 	transition: transform 0.2s, box-shadow 0.2s;
-	box-shadow: 5px 5px 0px white, 10px 10px 0px rgba(35, 35, 35, 0.5);
+	box-shadow: 5px 5px 0px rgb(52, 52, 52), 10px 10px 0px rgba(35, 35, 35, 0.4);
 
 	background-color: rgba(0, 0, 0, 0.3);
 }
@@ -57,8 +57,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 400px;
-	height: 400px;
+	width: 410px;
+	height: 410px;
 	background-color: #333;
 	border-radius: 50%;
 	background-image: repeating-radial-gradient(
@@ -78,7 +78,7 @@ body {
 	position: absolute;
 	width: 135px;
 	height: 135px;
-	background-color: #d3491fe2;
+	background-color: #d3491fcc;
 	border-radius: 50%;
 }
 
@@ -92,8 +92,8 @@ body {
 
 .sound-wave {
 	position: absolute;
-	width: 400px;
-	height: 400px;
+	width: 410px;
+	height: 410px;
 	border-radius: 50%;
 	animation: spin 0.1s linear infinite, waveExpand 1.5s infinite ease-in-out;
 	opacity: 0.4;
@@ -158,10 +158,10 @@ body {
 
 .playlist-info {
 	position: absolute;
-	bottom: 90px;
+	bottom: 80px;
 	left: 50%;
 	transform: translateX(-50%);
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.5);
 	font-size: 22px;
 	font-family: 'Jersey 15', 'Roboto', sans-serif;
 }
@@ -174,7 +174,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 8px;
 	text-align: center;
-	color: rgba(154, 154, 154, 0.6);
+	color: rgba(174, 174, 174, 0.892);
 }
 
 @media (max-width: 768px) {
