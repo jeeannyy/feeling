@@ -24,18 +24,18 @@ const emotions: Emotion[] = [
 	{ name: 'Disgusted' },
 ];
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:1234';
-
 const App = () => {
 	const [currentEmotion, setCurrentEmotion] = useState<string | null>(null);
 	const [recommendedSong, setRecommendedSong] = useState<Song | null>(null);
 	const [isDraggingOver, setIsDraggingOver] = useState<boolean>(false);
 	const currentYear = new Date().getFullYear();
 
+	const API_URL = import.meta.env.VITE_API_URL;
+
 	const handleDrop = async (emotion: string) => {
 		try {
 			const response = await axios.post<{ song: Song }>(
-				`${API_BASE}/api/recommend`,
+				`${API_URL}/api/recommend`,
 				{
 					emotion: emotion,
 				},
