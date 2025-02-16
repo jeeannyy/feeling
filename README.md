@@ -1,6 +1,6 @@
 # 💽 Feeling
 
-Feelings is a web application that recommends music based on your emotions.  
+Feeling (Tell me your vibe) is a web application that recommends music based on your emotions.  
 Built with **React (TypeScript), Node.js, Express, and MongoDB**.
 
 🔗 [Tick](https://tellmeyourvibe.vercel.app)
