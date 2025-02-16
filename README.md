@@ -1,9 +1,9 @@
-# 💽 Feelings
+# 💽 Feeling
 
 Feelings is a web application that recommends music based on your emotions.  
 Built with **React (TypeScript), Node.js, Express, and MongoDB**.
 
-🔗 [Tick](https://jeeannyy.github.io/feelings/)
+🔗 [Tick](https://tellmeyourvibe.vercel.app)
 
 ![demo2](https://github.com/user-attachments/assets/b1e283bd-2038-4122-bc77-60e6f09334c7)
 
