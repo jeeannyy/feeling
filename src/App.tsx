@@ -41,6 +41,7 @@ const App = () => {
 				},
 			);
 			console.log('response', response);
+
 			setRecommendedSong(response.data.song);
 			setCurrentEmotion(emotion);
 		} catch (error) {
