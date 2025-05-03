@@ -29,10 +29,12 @@ const App = () => {
 	const [recommendedSong, setRecommendedSong] = useState<Song | null>(null);
 	const [isDraggingOver, setIsDraggingOver] = useState<boolean>(false);
 	const currentYear = new Date().getFullYear();
+	const [isLoading, setIsLoading] = useState(false);
 
 	const API_URL = import.meta.env.VITE_API_URL;
 
 	const handleDrop = async (emotion: string) => {
+		setIsLoading(true);
 		try {
 			const response = await axios.post<{ song: Song }>(
 				`${API_URL}/api/recommend`,
@@ -40,12 +42,14 @@ const App = () => {
 					emotion: emotion,
 				},
 			);
-			console.log('response', response);
+			console.log('<<response', response);
 
 			setRecommendedSong(response.data.song);
 			setCurrentEmotion(emotion);
 		} catch (error) {
 			console.error('Error fetching song:', error);
+		} finally {
+			setIsLoading(false);
 		}
 
 		setIsDraggingOver(false);
@@ -84,6 +88,9 @@ const App = () => {
 					</div>
 				))}
 			</div>
+
+			{isLoading && <h3>🎵 Finding your jam...</h3>}
+
 			<div
 				className='vinyl'
 				onDragOver={(e) => {
