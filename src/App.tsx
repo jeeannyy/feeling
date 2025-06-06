@@ -89,7 +89,7 @@ const App = () => {
 				))}
 			</div>
 
-			{isLoading && <h3>🎵 Finding your jam...</h3>}
+			{isLoading && <h3 className='loading-text'>🎵 Finding your jam...</h3>}
 
 			<div
 				className='vinyl'

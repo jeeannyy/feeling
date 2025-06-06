@@ -28,11 +28,10 @@ body {
 }
 
 .bubble {
-	width: 100px;
+	width: 110px;
 	height: 60px;
 	border-radius: 5px;
 	color: rgba(255, 255, 255, 0.8);
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -41,7 +40,7 @@ body {
 	transition: transform 0.2s, box-shadow 0.2s;
 	box-shadow: 5px 5px 0px rgb(52, 52, 52), 10px 10px 0px rgba(35, 35, 35, 0.4);
 
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: #465150eb;
 }
 
 .bubble:active {
@@ -51,6 +50,14 @@ body {
 
 .bubble:hover {
 	animation: pixelShake 0.8s infinite;
+}
+
+.loading-text {
+	font-size: 22px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.86);
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+	font-family: 'Jersey 15', 'Roboto', sans-serif;
 }
 
 .vinyl {
@@ -161,7 +168,8 @@ body {
 	bottom: 80px;
 	left: 50%;
 	transform: translateX(-50%);
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(204, 204, 204, 0.914)
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 	font-size: 22px;
 	font-family: 'Jersey 15', 'Roboto', sans-serif;
 }
