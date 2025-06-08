@@ -2,9 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+
 const MoodSong = require('./models/MoodSong');
 
 const app = express();
+const PORT = process.env.PORT || 1234;
+
 app.use(cors());
 app.use(express.json());
 
@@ -31,10 +34,11 @@ app.post('/api/recommend', async (req, res) => {
 
 		res.json({ song: result[0].songs });
 	} catch (err) {
-		console.error(err);
+		console.error('❌ Error in /api/recommend:', err);
 		res.status(500).json({ message: 'Failed to fetch song' });
 	}
 });
 
-const PORT = process.env.PORT || 1234;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => {
+	console.log(`🚀 Server running on http://localhost:${PORT}`);
+});

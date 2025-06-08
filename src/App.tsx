@@ -27,8 +27,8 @@ const emotions: Emotion[] = [
 const App = () => {
 	const [currentEmotion, setCurrentEmotion] = useState<string | null>(null);
 	const [recommendedSong, setRecommendedSong] = useState<Song | null>(null);
-	const currentYear = new Date().getFullYear();
 	const [isLoading, setIsLoading] = useState(false);
+	const currentYear = new Date().getFullYear();
 
 	const API_URL = import.meta.env.VITE_API_URL;
 
@@ -41,7 +41,7 @@ const App = () => {
 					emotion: emotion,
 				},
 			);
-			console.log('<<response', response);
+			console.log(response, '<<response');
 
 			setRecommendedSong(response.data.song);
 			setCurrentEmotion(emotion);
@@ -102,7 +102,7 @@ const App = () => {
 				<div className='center-label'></div>
 				<div className='middle-circle'></div>
 				{recommendedSong && <div className='sound-wave'></div>}
-				{currentEmotion ? <p></p> : <p>Drag and drop your emotion here</p>}
+				{!currentEmotion && <p>Drag and drop your emotion here</p>}
 			</div>
 
 			{recommendedSong && (
