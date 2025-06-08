@@ -27,7 +27,6 @@ const emotions: Emotion[] = [
 const App = () => {
 	const [currentEmotion, setCurrentEmotion] = useState<string | null>(null);
 	const [recommendedSong, setRecommendedSong] = useState<Song | null>(null);
-	const [isDraggingOver, setIsDraggingOver] = useState<boolean>(false);
 	const currentYear = new Date().getFullYear();
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -51,8 +50,6 @@ const App = () => {
 		} finally {
 			setIsLoading(false);
 		}
-
-		setIsDraggingOver(false);
 	};
 
 	const extractYouTubeId = (url: string): string | undefined => {
@@ -95,9 +92,7 @@ const App = () => {
 				className='vinyl'
 				onDragOver={(e) => {
 					e.preventDefault();
-					setIsDraggingOver(true);
 				}}
-				onDragLeave={() => setIsDraggingOver(false)}
 				onDrop={(e) => {
 					const emotion = e.dataTransfer.getData('text/plain');
 					handleDrop(emotion);

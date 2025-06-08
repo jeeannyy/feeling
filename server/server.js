@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -9,36 +8,31 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const MONGO_URI = process.env.MONGO_URI;
-
 mongoose
-	.connect(MONGO_URI, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	})
-	.then(() => console.log('✅ Successfully connected to MongoDB!'))
-	.catch((err) => console.error('❌ Failed to connect to MongoDB:', err));
+	.connect(process.env.MONGO_URI)
+	.then(() => console.log('✅ MongoDB connected'))
+	.catch((err) => console.error('❌ MongoDB connection error:', err));
 
 app.post('/api/recommend', async (req, res) => {
 	try {
 		const { emotion } = req.body;
 
-		console.log('emotion:', emotion);
-
 		const result = await MoodSong.aggregate([
-			{ $match: { emotion: emotion } },
+			{ $match: { emotion } },
 			{ $unwind: '$songs' },
 			{ $sample: { size: 1 } },
 		]);
 
-		if (result.length > 0) {
-			res.json({ song: result[0].songs });
-		} else {
-			res.status(404).json({ message: 'No songs found for this mood.' });
+		if (result.length === 0) {
+			return res
+				.status(404)
+				.json({ message: 'No song found for this emotion' });
 		}
-	} catch (error) {
-		console.error('Error fetching song:', error);
-		res.status(500).json({ message: 'Internal server error' });
+
+		res.json({ song: result[0].songs });
+	} catch (err) {
+		console.error(err);
+		res.status(500).json({ message: 'Failed to fetch song' });
 	}
 });
 
