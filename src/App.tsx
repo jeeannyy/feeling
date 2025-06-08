@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import YouTube from 'react-youtube';
@@ -28,9 +28,14 @@ const App = () => {
 	const [currentEmotion, setCurrentEmotion] = useState<string | null>(null);
 	const [recommendedSong, setRecommendedSong] = useState<Song | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
+	const [isPreloaded, setIsPreloaded] = useState(false);
 	const currentYear = new Date().getFullYear();
 
 	const API_URL = import.meta.env.VITE_API_URL;
+
+	useEffect(() => {
+		setIsPreloaded(true);
+	}, []);
 
 	const handleDrop = async (emotion: string) => {
 		setIsLoading(true);
@@ -41,8 +46,6 @@ const App = () => {
 					emotion: emotion,
 				},
 			);
-			console.log(response, '<<response');
-
 			setRecommendedSong(response.data.song);
 			setCurrentEmotion(emotion);
 		} catch (error) {
@@ -59,6 +62,14 @@ const App = () => {
 		return match && match[7].length === 11 ? match[7] : undefined;
 	};
 
+	const fakeYoutubeOptions = {
+		height: '0',
+		width: '0',
+		playerVars: {
+			autoplay: 0,
+		},
+	};
+
 	const youtubeOptions = {
 		height: '0',
 		width: '0',
@@ -71,6 +82,14 @@ const App = () => {
 
 	return (
 		<div className='App'>
+			{isPreloaded && (
+				<YouTube
+					videoId='dQw4w9WgXcQ'
+					opts={fakeYoutubeOptions}
+					className='fake-Youtube'
+				/>
+			)}
+
 			<div className='bubbles-container'>
 				{emotions.map((emotion) => (
 					<div
@@ -90,9 +109,7 @@ const App = () => {
 
 			<div
 				className='vinyl'
-				onDragOver={(e) => {
-					e.preventDefault();
-				}}
+				onDragOver={(e) => e.preventDefault()}
 				onDrop={(e) => {
 					const emotion = e.dataTransfer.getData('text/plain');
 					handleDrop(emotion);
@@ -111,9 +128,7 @@ const App = () => {
 						videoId={extractYouTubeId(recommendedSong.url)}
 						opts={youtubeOptions}
 					/>
-
 					<b>{recommendedSong.title}</b>
-
 					<p>
 						{recommendedSong.artist} • {recommendedSong.album} •{' '}
 						{recommendedSong.release}

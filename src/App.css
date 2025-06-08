@@ -60,6 +60,14 @@ body {
 	font-family: 'Jersey 15', 'Roboto', sans-serif;
 }
 
+.fake-Youtube {
+	visibility: 'hidden',
+						position: 'absolute',
+						width: '300px',
+						height: '200px',
+						top: '-9999px',
+}
+
 .vinyl {
 	display: flex;
 	justify-content: center;
