@@ -1,17 +1,12 @@
-import mongoose from 'mongoose';
-import MoodSong from '../models/MoodSong';
+const dbConnect = require('../lib/dbConnect');
+const MoodSong = require('../models/MoodSong');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
 	if (req.method !== 'POST') {
 		return res.status(405).json({ message: 'Method Not Allowed' });
 	}
 
-	if (!mongoose.connections[0].readyState) {
-		await mongoose.connect(process.env.MONGO_URI, {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-		});
-	}
+	await dbConnect();
 
 	try {
 		const { emotion } = req.body;
@@ -32,4 +27,4 @@ export default async function handler(req, res) {
 		console.error('Error fetching song:', error);
 		res.status(500).json({ message: 'Internal server error' });
 	}
-}
+};
