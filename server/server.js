@@ -42,3 +42,7 @@ app.post('/api/recommend', async (req, res) => {
 app.listen(PORT, () => {
 	console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
+app.get('/api/ping', (req, res) => {
+	res.status(200).json({ ok: true });
+});

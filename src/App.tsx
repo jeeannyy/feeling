@@ -29,12 +29,24 @@ const App = () => {
 	const [recommendedSong, setRecommendedSong] = useState<Song | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isPreloaded, setIsPreloaded] = useState(false);
-	const currentYear = new Date().getFullYear();
 
 	const API_URL = import.meta.env.VITE_API_URL;
 
+	const currentYear = new Date().getFullYear();
+
 	useEffect(() => {
 		setIsPreloaded(true);
+
+		const pingServer = () => {
+			fetch(`${API_URL}/api/ping`).catch((err) =>
+				console.error('🌐 Ping failed:', err),
+			);
+		};
+
+		pingServer();
+		const interval = setInterval(pingServer, 1000 * 10);
+
+		return () => clearInterval(interval);
 	}, []);
 
 	const handleDrop = async (emotion: string) => {
@@ -42,13 +54,23 @@ const App = () => {
 		try {
 			const response = await axios.post<{ song: Song }>(
 				`${API_URL}/api/recommend`,
-				{
-					emotion: emotion,
-				},
+				{ emotion: emotion },
 			);
 			setRecommendedSong(response.data.song);
 			setCurrentEmotion(emotion);
-		} catch (error) {
+		} catch (error: unknown) {
+			if (axios.isAxiosError(error)) {
+				const status = error.response?.status;
+
+				if (status === 404) {
+					alert('😢 No song found for this emotion.');
+				} else {
+					alert('⚠️ Something went wrong. Please try again later.');
+				}
+			} else {
+				alert('⚠️ An unexpected error occurred.');
+			}
+
 			console.error('Error fetching song:', error);
 		} finally {
 			setIsLoading(false);
