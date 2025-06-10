@@ -36,17 +36,6 @@ const App = () => {
 
 	useEffect(() => {
 		setIsPreloaded(true);
-
-		const pingServer = () => {
-			fetch(`${API_URL}/api/ping`).catch((err) =>
-				console.error('🌐 Ping failed:', err),
-			);
-		};
-
-		pingServer();
-		const interval = setInterval(pingServer, 1000 * 10);
-
-		return () => clearInterval(interval);
 	}, []);
 
 	const handleDrop = async (emotion: string) => {
